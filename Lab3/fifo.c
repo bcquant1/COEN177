@@ -36,7 +36,6 @@ int main(int argc, char *argv[]) {
         }
         numRequest++;
         if(!isInMemory(pageRequest, pageTable, tableSize)) {
-            //printf("Page %d caused a page fault.\n", pageRequest);
             numMisses++;
 	    fprintf(fp, "Page %d caused a page fault.\n", pageRequest);
             if(pageTableIndex < tableSize) {
