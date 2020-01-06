@@ -48,8 +48,6 @@ int main(int argc, char *argv[]) {
 		}
 		pageTable[0] = pageRequest;
 		pageTableIndex++;
-		//pageTable[pageTableIndex] = pageRequest;
-		//pageTableIndex++;
             } else {
                 // TODO implement a page replacement algorithm
 		int j;
@@ -58,7 +56,7 @@ int main(int argc, char *argv[]) {
 		}
 		pageTable[0] = pageRequest;
             }
-        } // else probably want to update something in pageTable so that lru and second chance work correctly
+        } 
 	else{
 	    int k, l, index;
 	    for (k = 0; k < tableSize; k++){
