@@ -27,11 +27,8 @@ int main(int argc, char *argv[]) {
     char *input = NULL;
     size_t inputAllocated = 0;
     ssize_t bytesRead;
-    
     FILE *fp;
     fp = fopen("fifo.txt", "w");
-        
- 
     while((bytesRead = getline(&input, &inputAllocated, stdin)) != -1) {
         pageRequest = atoi(input);
         if(pageRequest == 0) {
@@ -51,9 +48,8 @@ int main(int argc, char *argv[]) {
 		    pageTable[i] = pageTable[i+1];
 		}
 		pageTable[tableSize-1] = pageRequest;
-                //fprintf(stderr, "Ran out of memory. Implement a page replacment algorithm!\n");
             }
-        } // else probably want to update something in pageTable so that lru and second chance work correctly
+        } 
     }
     fprintf(fp,"Hit rate = %f\n", (numRequest-numMisses)/(double)numRequest);
     printf("Hit rate = %f\n", (numRequest-numMisses)/(double)numRequest);
