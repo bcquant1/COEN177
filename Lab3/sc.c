@@ -57,9 +57,8 @@ int main(int argc, char *argv[]) {
 		pageTable[pageTableIndex] = pageRequest;
 		reference[pageTableIndex] = 0;
 		pageTableIndex = (pageTableIndex+1)%tableSize;
-                //fprintf(stderr, "Ran out of memory. Implement a page replacment algorithm!\n");
             }
-        } // else probably want to update something in pageTable so that lru and second chance work correctly
+        } 
 	else{
 	    int j;
 	    for (j = 0; j < tableSize; j++){
